@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="nav-away-modal-title">
+		Remove <strong>{{bevThing.name}}</strong> from Your Order
+	</h4>
+</div>
+<div class="modal-body">
+	<form name="removeBevForm" ng-show="bevThing.quantity > 1">
+		<label for="quantity">How many <u><em>{{bevThing.name}}</em></u> do you want to remove from your order?</label>
+		<input type="number" name="quantity" class="form-control" required ng-model="quantity" min="1" ng-minLength="1" ng-maxLength="bevThing.quantity">
+		<span class="error" ng-show="removeBevForm.quantity.$error.required">Quantity is required!</span>
+		<span class="error" ng-show="removeBevForm.quantity.$error.number">Not a valid quantity!</span>
+	</form>
+	<span ng-show="bevThing.quantity < 2 || !bevThing.quantity">Are you sure you want to remove <u><em>{{bevThing.name}}</em></u> from your order?</span>
+	<br/>
+	<br/>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary pull-left" ng-click="$close('discard')">
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+  <button type="button" class="btn btn-danger pull-right" ng-click="removeBevThing()">
+    <i class="fa fa-remove"></i> &nbsp; Remove from Order
+  </button>
+</div>

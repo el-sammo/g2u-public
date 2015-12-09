@@ -1,0 +1,15 @@
+
+<div class="col-md-6 page-header">
+  <h3>{{pluralName}}</h3>
+</div>
+<div class="col-md-6 page-header">
+  <a href="/app/{{path}}/add" class="pull-right">
+    <button class="btn btn-default">
+      <i class="fa fa-2x fa-plus-square"></i>
+      <div class="fa-btn-text divspan">Add {{name}}</div>
+    </button>
+  </a>
+</div>
+<div class="col-md-12">
+  <div ng-include="datatables.template"></ng-include>
+</div>

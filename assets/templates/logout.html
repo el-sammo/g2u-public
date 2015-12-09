@@ -1,0 +1,28 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="sd-login-modal-title">
+    Are you sure you want to log out?
+  </h4>
+</div>
+<div class="modal-body" id="sd-login-modal">
+	<div class="form-group">
+		<div class="col-sm-12">
+			<span class="text-muted">We're sorry to see you leave, but we're glad you stopped by! Click the "Log Out" button below to complete the log out process</span>
+		</div>
+	</div>
+	<br/>
+</div>
+<div class="modal-footer">
+  <button
+    type="button" class="btn btn-default pull-left"
+    ng-click="cancel()"
+  >
+    Cancel
+  </button>
+  <button
+    type="submit" class="btn btn-primary pull-right"
+    ng-click="logOut()"
+  >
+    Log Out
+  </button>
+</div>
+

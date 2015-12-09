@@ -1,0 +1,29 @@
+<div class="col-md-12">
+	<div class="row">
+		<div class="col-md-3 no-right-padding visible-lg-inline">
+			<div class="row" id="restListHead">
+				<div class="col-md-12">
+					<h3>Restaurants</h3>
+				</div>
+			</div>
+			<ng-include src="'/templates/restaurantsMenusPanel.html'"></ng-include>
+		</div>
+		<div class="col-lg-6 col-md-12">
+			<div class="row" id="menuListHead">
+				<div class="col-md-12">
+					<h3>Menus</h3>
+				</div>
+			</div>
+			<ng-include src="'/templates/menuItemsPanel.html'"></ng-include>
+		</div>
+		<div class="col-md-3 visible-lg-inline">
+			<div class="row" id="orderHead">
+				<div class="col-md-12">
+					<h3>Your Order</h3>
+				</div>
+			</div>
+			<ng-include src="'/templates/orderPanel.html'"></ng-include>
+			<ng-include src="'/templates/orderPanelCheckout.html'"></ng-include>
+		</div>
+	</div>
+</div>

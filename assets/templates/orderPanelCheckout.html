@@ -1,0 +1,11 @@
+			<div ng-controller="OrderController">
+				<div class="col-md-12" ng-show="orderStatus && orderStatus < 5 && (things.length || bevThings.length)">
+					<div class="row">
+						<div class="col-md-12" id="checkoutLink">
+							<button class="btn btn-danger btn-big" ng-click="checkout(order)">
+								Checkout
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>

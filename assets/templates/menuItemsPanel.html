@@ -1,0 +1,62 @@
+			<!--
+			<div class="row">
+				<div class="col-md-12">
+					<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+					</ui-gmap-google-map>
+				</div>
+			</div>
+			<br/>
+			<br/>
+			-->
+			<div class="row">
+				<div class="col-md-12" id="menuItemsPanel" ng-controller="MenuItemsController" manage-height ng-cloak>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="menuHeader">
+								<span ng-show="displayRestaurant && displayMenu">{{displayRestaurant.name }} - {{displayMenu.name}}</span>
+							</div>
+							<div class="menuInfo">
+								<span ng-show="displayMenu.availStart && displayMenu.availEnd">Served from {{timeFormat(displayMenu.availStart)}} to {{timeFormat(displayMenu.availEnd)}}<br></span>
+								<span ng-show="displayMenu.desc">{{displayMenu.desc}}<br></span>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<div class="row" id="itemRow" ng-repeat="item in items">
+						<div ng-show="item.image">
+							<div class="col-md-6 col-xs-6">
+								<div class="itemName">{{item.name}}</div>
+								<div class="itemDesc">{{item.desc}}</div>
+								<div class="itemOptions" ng-repeat="option in item.options">
+									<span ng-show="option">{{option.name}} ({{option.price}})</span>
+								</div>
+								<p class="add2Order pull-left" ng-show="item.options.length > 0 && item.active" ng-click="addItem(item)">
+									Add to Order
+								</p>
+								<p class="add2Order pull-left" ng-show="item.options.length < 1 || !item.active">
+									Not Available
+								</p>
+							</div>
+							<div class="col-md-6 col-xs-6">
+								<img ng-src="{{item.image}}" class="img-responsive">
+							</div>
+						</div>
+						<div ng-show="!item.image">
+							<div class="col-md-12 col-xs-12">
+								<div class="itemName">{{item.name}}</div>
+								<div class="itemDesc">{{item.desc}}</div>
+								<div class="itemOptions" ng-repeat="option in item.options">
+									<span ng-show="option">{{option.name}} ({{option.price}})</span>
+								</div>
+								<p class="add2Order pull-left" ng-show="item.options.length > 0" ng-click="addItem(item)">
+									Add to Order
+								</p>
+								<p class="add2Order pull-left" ng-show="item.options.length < 1">
+									Not Available
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="vspace70 visible-md-block visible-sm-block visible-xs-block"></div>
+				</div>
+			</div>

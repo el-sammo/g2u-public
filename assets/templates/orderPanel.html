@@ -1,0 +1,150 @@
+			<div class="row" ng-controller="OrderController" id="orderPanel" manage-height="order">
+				<div class="col-md-12" ng-show="(things.length > 0 || bevThings.length > 0) && orderStatus < 5">
+					<div class="row" id="thingRow" ng-repeat="thing in things">
+						<div class="col-md-9">
+							{{thing.name}}
+							<span ng-show="thing.quantity > 1"><strong>({{thing.quantity}})</strong></span>
+							<br>
+							({{thing.option}}
+							<span ng-show="thing.specInst.length > 0"> - {{thing.specInst}}</span>)
+						</div>
+						<div class="col-md-3" id="thingPrice">
+							<span ng-show="thing.quantity < 2 || !thing.quantity">{{thing.price}}</span>
+							<span ng-show="thing.quantity > 1">{{(thing.quantity * thing.price).toFixed(2)}}</span>
+							<br>
+							<div class="priceOptionRemove">
+								<span class="removeFromOrder" ng-init="thingId = thing.optionId" ng-click="removeItem(thing)">
+									Remove
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="row" id="thingRow" ng-repeat="bevThing in bevThings">
+						<div class="col-md-9">
+							{{bevThing.name}}
+							<span ng-show="bevThing.quantity > 1"><strong>({{bevThing.quantity}})</strong></span>
+							<br>
+							({{bevThing.option}}
+						</div>
+						<div class="col-md-3" id="thingPrice">
+							<span ng-show="bevThing.quantity < 2 || !bevThing.quantity">{{bevThing.price}}</span>
+							<span ng-show="bevThing.quantity > 1">{{(bevThing.quantity * bevThing.price).toFixed(2)}}</span>
+							<br>
+							<div class="priceOptionRemove">
+								<span class="removeFromOrder" ng-init="bevThingId = bevThing.optionId" ng-click="removeBevItem(bevThing)">
+									Remove
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="row" id="subtotalRow">
+						<div class="col-md-9">
+							Subtotal
+						</div>
+						<div class="col-md-3" id="subtotal">
+							{{subtotal}}
+						</div>
+					</div>
+					<div class="row" id="taxRow">
+						<div class="col-md-9">
+							Sales Tax
+						</div>
+						<div class="col-md-3" id="tax">
+							{{tax}}
+						</div>
+					</div>
+					<div class="row" id="deliveryFeeRow" ng-show="deliveryFee">
+						<div class="col-md-9">
+							Delivery Fee <span class="helpInfo" ng-click="delFeeExp(things, deliveryFee)">(?)</span>
+						</div>
+						<div class="col-md-3" id="deliveryFee">
+							{{deliveryFee}}
+						</div>
+					</div>
+					<div class="row" id="totalRow">
+						<div class="col-md-9">
+							Total
+						</div>
+						<div class="col-md-3" id="total">
+							{{total}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" ng-show="!things.length > 0 && !bevThings.length > 0">
+					<div class="row">
+						<div class="col-md-12">
+							You don't have any items in your order yet.<br/><br/>
+							Add an item to your order by clicking on <font style="color: red;"><b>Add to Order</b></font> for an item listed under the 'Menus' tab in the middle of this page.
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" ng-show="orderStatus > 4">
+					<div class="row">
+						<div class="col-md-12" style="color: red; text-alignment: center; border-bottom: 1px solid #C0C2FF;">
+							<h3>Congratulations!</h3>
+							<h4>Your Order is Being Processed</h4>
+						</div>
+					</div>
+					<div class="row" id="thingRow" ng-repeat="thing in things">
+						<div class="col-md-9">
+							{{thing.name}}
+							<span ng-show="thing.quantity > 1"><strong>({{thing.quantity}})</strong></span>
+							<br>
+							({{thing.option}}
+							<span ng-show="thing.specInst.length > 0"> - {{thing.specInst}}</span>)
+						</div>
+						<div class="col-md-3" id="thingPrice">
+							<span ng-show="thing.quantity < 2 || !thing.quantity">{{thing.price}}</span>
+							<span ng-show="thing.quantity > 1">{{(thing.quantity * thing.price).toFixed(2)}}</span>
+						</div>
+					</div>
+					<div class="row" id="subtotalRow">
+						<div class="col-md-9">
+							Subtotal
+						</div>
+						<div class="col-md-3" id="subtotal">
+							{{subtotal}}
+						</div>
+					</div>
+					<div class="row" id="taxRow">
+						<div class="col-md-9">
+							Sales Tax
+						</div>
+						<div class="col-md-3" id="tax">
+							{{tax}}
+						</div>
+					</div>
+					<div class="row" id="deliveryFeeRow">
+						<div class="col-md-9">
+							Delivery Fee
+						</div>
+						<div class="col-md-3" id="deliveryFee">
+							{{deliveryFee}}
+						</div>
+					</div>
+					<div class="row" id="discountRow" ng-show="discount > 0">
+						<div class="col-md-9">
+							Discount
+						</div>
+						<div class="col-md-3" id="discount">
+							<font style="color: red;">-{{discount}}</font>
+						</div>
+					</div>
+					<div class="row" id="gratuityRow" ng-show="gratuity > 0">
+						<div class="col-md-9">
+							Driver Gratuity
+						</div>
+						<div class="col-md-3" id="gratuity">
+							{{gratuity}}
+						</div>
+					</div>
+					<div class="row" id="totalRow">
+						<div class="col-md-9">
+							Total
+						</div>
+						<div class="col-md-3" id="total">
+							{{total}}
+						</div>
+					</div>
+				</div>
+			</div>

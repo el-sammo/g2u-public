@@ -1,0 +1,35 @@
+#!/bin/bash
+
+pushd `dirname $0` > /dev/null
+SCRIPTPATH=`pwd -P`
+popd > /dev/null
+
+cd $SCRIPTPATH
+
+LOG="$SCRIPTPATH/../logs/g2u.log"
+MIN_UPTIME=15000
+SPIN_SLEEP_TIME=0
+APPLICATION_PATH="app.js"
+
+if [ ! -f $LOG ]; then
+	touch $LOG
+fi
+
+case "$1" in
+	start)
+		forever -a -l $LOG --minUptime $MIN_UPTIME --spinSleepTime $SPIN_SLEEP_TIME start $APPLICATION_PATH
+		;;
+	stop)
+		forever stop $APPLICATION_PATH
+		;;
+	status)
+		forever list
+		;;
+	*)
+		echo "Usage: $0 {start|stop|status}"
+		exit 1;
+esac
+
+RETVAL=$?
+
+exit $RETVAL

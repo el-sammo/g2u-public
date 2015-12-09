@@ -1,0 +1,97 @@
+<div id="fms-customers-form" class="col-md-12" style="top: 164px; background-color: white; padding-top: 12px;" ng-cloak ng-contoller="AccountEditController">
+	<form name="form" class="form-horizontal">
+		<div class="form-group">
+
+			<label for="fName" class="col-md-3 control-label">First Name</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="First Name"
+					ng-model="customer.fName" id="fName"
+				>
+			</div>
+
+			<label for="lName" class="col-md-3 control-label">Last Name</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="Last Name"
+					ng-model="customer.lName" id="lName"
+				>
+			</div>
+
+			<label for="street" class="col-md-3 control-label">Street Address</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="1234 S. Center St."
+					ng-model="customer.addresses.primary.street" id="street"
+				>
+			</div>
+
+			<label for="apt" class="col-md-3 control-label">Apartment / Suite</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="12D"
+					ng-model="customer.addresses.primary.apt" id="apt"
+				>
+			</div>
+
+			<label for="city" class="col-md-3 control-label">City</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="Your City"
+					ng-model="customer.addresses.primary.city" id="city"
+				>
+			</div>
+
+			<label for="state" class="col-md-3 control-label">State</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="Your State"
+					ng-model="customer.addresses.primary.state" id="state"
+				>
+			</div>
+
+			<label for="zip" class="col-md-3 control-label">Zip</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="12345"
+					ng-model="customer.addresses.primary.zip" id="zip"
+				>
+			</div>
+
+			<label for="phone" class="col-md-3 control-label">Phone</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="1234567890"
+					ng-model="customer.phone" id="phone"
+				>
+			</div>
+
+			<label for="email" class="col-md-3 control-label">Email</label>
+			<div class="col-md-9">
+				<input 
+					type="text" class="form-control" placeholder="your.name@gmail.com"
+					ng-model="customer.email" id="email"
+				>
+			</div>
+
+		</div>
+
+		<div class="navbar navbar-default">
+			<div class="container-fluid">
+				<button
+					type="button" class="btn btn-danger col-md-1" 
+					ng-click="cancel()"
+				>
+					Cancel
+				</button>
+				<button 
+					type="button" class="btn btn-primary col-md-1 pull-right" 
+					ng-click="save(customer)"
+				>
+					<i class="fa fa-save"></i> &nbsp;
+					Save
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

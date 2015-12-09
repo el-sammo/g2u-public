@@ -1,0 +1,53 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Update Your Address
+  </h3>
+</div>
+<div class="modal-body">
+	<form name="updateAddressForm">
+		<div class="row">
+			<div class="col-md-12">
+				<label for="address">Address*</label>
+				<input type="text" name="address" class="form-control" required
+					ng-model="address" ng-class="requiredAddress(address)"
+				>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label for="apt">Apt / Ste:</label>
+				<input type="text" name="apt" class="form-control" ng-model="apt">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label for="city">City*</label>
+				<input type="text" name="city" class="form-control" required ng-model="city"
+					ng-class="required(city)"
+				>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label for="zip">Zip*</label>
+				<input type="number" name="zip" class="form-control" required
+					ng-model="zip" ng-class="required(zip)"
+				>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button
+		type="button" class="btn btn-primary pull-left" ng-click="$close('discard')"
+		ng-class="{disabled: processing}"
+	>
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+	<button
+		type="button" class="btn btn-success pull-right" ng-click="updateAddress()"
+		ng-class="{disabled: processing}"
+	>
+    <i class="fa fa-plus"></i> &nbsp; Update
+  </button>
+</div>

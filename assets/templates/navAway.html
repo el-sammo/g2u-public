@@ -1,0 +1,58 @@
+<div class="modal-header">
+  <button
+    type="button" class="close" data-dismiss="modal" aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span></button>
+  </button>
+  <h4 class="modal-title" id="nav-away-modal-title">
+    Confirm Navigation
+  </h4>
+</div>
+<div class="modal-body" id="sd-nav-away-modal">
+  <p>
+    You are about to leave this form.
+  </p>
+  <p class="lead">
+    Any unsaved changes will be lost forever.
+  </p>
+  <!--
+  <ul>
+    <li>
+      Click <span class="label label-custom">Back to Form</span>
+      to return to the form and continue editing.
+    </li>
+    <li>
+      Click <span class="label label-custom">Save as Draft</span>
+      to create a temporary backup of your changes that you could return
+      to editing in the future.
+    </li>
+    <li>
+      Click <span class="label label-custom">Discard</span>
+      to throw away your changes forever.
+    </li>
+  </ul>
+  -->
+</div>
+<div class="modal-footer">
+  <button
+    type="button" class="btn btn-primary pull-left"
+    ng-click="$dismiss('cancel')"
+  >
+    <i class="fa fa-arrow-circle-left"></i> &nbsp;
+    Back to Form
+  </button>
+  <button
+    type="button" class="btn btn-default"
+    ng-click="$close('save')"
+  >
+    Save as Draft
+  </button>
+  <button 
+    type="button" class="btn btn-danger"
+    ng-click="$close('discard')"
+  >
+    <i class="fa fa-warning"></i> &nbsp;
+    Discard
+  </button>
+</div>
+

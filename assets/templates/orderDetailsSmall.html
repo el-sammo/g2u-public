@@ -1,0 +1,97 @@
+<div id="orderDetailsContainer" style="padding-bottom: 80px">
+	<div class="col-md-12 page-header" ng-cloak>
+		<div class="row">
+			<div class="col-md-2">
+				<span class="orderDetailsDestinationInfo" style="font-size: 16px; font-weight: bold;">{{fName}} {{lName}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{phone}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{address}}</span>
+			</div>
+			<br/>
+			<div class="col-md-2">
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left">Order Date: </span><span class="orderDetailsDestinationInfo pull-right">{{orderDate}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left" ng-show="paymentMethod != 'cash'">Credit Card: </span><span class="orderDetailsDestinationInfo pull-right" ng-show="paymentMethod != 'cash'">{{total}}</span>
+						<span class="orderDetailsDestinationInfo pull-left" ng-show="paymentMethod == 'cash'">Cash: </span><span class="orderDetailsDestinationInfo pull-right" ng-show="paymentMethod == 'cash'">{{total}}</span>
+					</div>
+				</div>
+				<br/>
+				<div class="row">
+					<div class="col-md-12">
+						<span ng-show="orderStatus > 4 && orderStatus < 6">Payment Accepted at {{paymentAcceptedAtFormatted}}</span>
+						<span ng-show="orderStatus > 5 && orderStatus < 7">Order Placed at {{placedAtFormatted}}</span>
+						<span ng-show="orderStatus > 6 && orderStatus < 8">Order Collected at {{collectedAtFormatted}}</span>
+						<span ng-show="orderStatus > 8">Order Delivered at {{deliveredAtFormatted}}</span>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="col-md-2">
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left">Subtotal</span><span class="orderDetailsDestinationInfo pull-right">{{subtotal}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left">Tax</span><span class="orderDetailsDestinationInfo pull-right">{{tax}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left">Delivery Fee</span><span class="orderDetailsDestinationInfo pull-right">{{deliveryFee}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left" ng-show="gratuity > 0">Gratuity</span><span class="orderDetailsDestinationInfo pull-right" ng-show="gratuity > 0">{{gratuity}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left" ng-show="discount > 0">Discount</span><span class="orderDetailsDestinationInfo pull-right" ng-show="discount > 0" style="color: red;">-{{discount}}<br/></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="orderDetailsDestinationInfo pull-left">Total</span><span class="orderDetailsDestinationInfo pull-right">{{total}}</span>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="col-md-2">
+				<span class="orderDetailsDestinationInfo" style="font-size: 16px; font-weight: bold;">Order Status<br/></span>
+				<span class="orderDetailsDestinationInfo">{{orderStatusFormatted}}</span>
+			</div>
+			<div class="col-md-4">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row" ng-repeat="restaurant in orderRestaurants">
+					<div class="col-md-12">
+						<div class="row">
+							<span class="orderDetailsRestaurantInfo"><h4>{{restaurant.name}}</h4></span>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row" ng-repeat="item in restaurant.items">
+							<div class="col-md-11 col-md-offset-1">
+								<span class="orderDetailsItemInfo">{{item.quantity}} {{item.name}} - {{item.option}}<br/></span>
+								<span class="orderDetailsItemInfo">{{item.specInst}}<br/></span>
+							</div>
+						</div>
+					</div>
+					<br/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

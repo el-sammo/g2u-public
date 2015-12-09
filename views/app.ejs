@@ -1,0 +1,133 @@
+<div ng-cloak ng-controller="LayoutController">
+	<!-- BIG Navbar -->
+	<nav id="fms-headbar" class="navbar navbar-default navbar-fixed-top visible-lg-inline">
+		<div class="container-fluid">
+			<div style="top: 40px; position: relative;">
+				<ul class="nav navbar-nav">
+					<li class="fms-brand navbar-brand">
+						<a href="/app/">
+							<img src="/images/logo_enhanced.png">
+						</a>
+					</li>
+					<li>
+						<span>
+							<h1>
+								<a href="/app/">
+									<span ng-show="areaName">{{areaName}} </span>
+									Restaurants
+								</a>
+							</h1>
+						</span>
+						<span>
+							<h1>
+								<a ng-show="!accessAccount" ng-click="logIn()">My Account</a>
+								<a ng-show="accessAccount" href="/app/account/">My Account</a>
+							</h1>
+						</span>
+
+						<!--
+						<span ng-show="!accessAccount">
+							<span ng-click="logIn()" class="logInSignUpLink">Log In</span>
+							<span class="logInSignUpPipe"> | </span>
+							<span ng-click="signUp()" class="logInSignUpLink">Sign Up</span>
+						</span>
+						-->
+						<span ng-show="todayStart && todayEnd">
+							<h1 style="color: red;">
+								Lunch Delivery Starts Monday, May 11!
+							</h1>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="visible-lg-block"
+		style="height: 164px; width: 99%;"
+	></div>
+	<!-- /BIG Navbar -->
+
+	<!-- Small Navbar -->
+	<nav id="fms-headbar"
+		class="navbar navbar-default navbar-fixed-top visible-md-inline visible-sm-inline visible-xs-inline"
+	>
+		<div class="container-fluid">
+			<div>
+				<ul class="nav navbar-nav">
+					<li>
+						<div class="fms-brand" style="position: relative; margin-right: 18px;">
+							<a href="/app/">
+								<img src="/images/logo_enhanced.png">
+							</a>
+						</div>
+						<a ng-click="menuClicked()" class="pull-right" style="margin-right: 18px;">
+							<i class="fa fa-bars fa-lg"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="visible-md-block visible-sm-block visible-xs-block"
+		style="height: 90px; width: 99%;"
+	></div>
+	<ul ng-show="showMenu" 
+		class="list-group visible-md-inline visible-sm-inline visible-xs-inline"
+	>
+		<li class="list-group-item">
+			<h1>
+				Lunch Delivery Starts May 11!
+			</h1>
+		</li>
+		<li class="list-group-item">
+			<a href="/app/restaurants/{{featuredMenuSlug}}" ng-click="menuClicked(false)">
+				Restaurants
+			</a>
+		</li>
+		<li class="list-group-item">
+			<a ng-show="!accessAccount" style="cursor: pointer;"
+				ng-click="logIn(); menuClicked(false)"
+			>Account</a>
+			<a ng-show="accessAccount" href="/app/account/" ng-click="menuClicked(false)">
+				Account
+			</a>
+		</li>
+		<li class="list-group-item">
+			<a href="/app/cart" ng-click="menuClicked(false)">
+				<i class="fa fa-shopping-cart"></i> &nbsp;Cart
+			</a>
+		</li>
+		<li class="list-group-item">
+			<span class="managementLink" ng-click="logOut()">Log Out</span><br/>
+		</li>
+	</ul>
+	<!-- /Small Navbar -->
+</div>
+
+<div ng-controller="MessageController" id="fms-messenger">
+  <alert type="{{alertType}}" ng-show="userMessage" close="close()">
+    <strong ng-show="title">{{title}}&nbsp;</strong>
+    {{userMessage}}
+  </alert>
+</div>
+
+<div class="container" id="fms-main-container">
+  <div id="fms-main">
+    <div ng-view></div>
+  </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" ng-controller="LayoutController">
+	<div class="container">
+		<a href="/app/about" class="footerLink">Grub2You Story</a>
+		<span class="footerLink" style="cursor: pointer;" ng-click="feedback()">Feedback</span>
+		<a href="/app/careers" class="footerLink">Careers</a>
+		<a href="/app/terms" class="footerLink">Terms</a>
+		<a href="/app/privacy" class="footerLink">Privacy Policy</a>
+		<a href="/app/contact" class="footerLink">Contact Us</a>
+	</div>
+</nav>
+
+<!-- Hack for ensuring event-based services are instantiated -->
+<div ng-controller="LoadServices" style="display:none;" aria-hidden="true"></div>
+

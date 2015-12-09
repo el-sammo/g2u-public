@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Add <strong>{{bev.name}}</strong> to Your Order
+  </h3>
+</div>
+<div id="completedOrderError" ng-show="orderCompleted">
+	<span class="errorBig">You have already completed this order.</span>
+</div>
+<div class="modal-body">
+	<form name="addBevForm">
+		<h4 class="breakbeat">Select Your Option</h4>
+		<div class="radio" ng-repeat="option in bev.options">
+			<label>
+				<input type="radio" name="optionName" ng-value="option.id" ng-model="$parent.selOption">
+				{{option.name}} - {{option.price}}
+			</label>
+		</div>
+		<br/>
+		<label for="quantity">Quantity:</label>
+		<input type="number" name="quantity" class="form-control" min="1" required ng-model="quantity">
+		<span class="error" ng-show="addBevForm.quantity.$error.required">Quantity is required!</span>
+		<span class="error" ng-show="addBevForm.quantity.$error.number">Not a valid quantity!</span>
+	</form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary pull-left" ng-click="$close('discard')">
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+  <button type="button" class="btn btn-success pull-right" ng-click="addBevOption()" ng-disabled="!selOption">
+    <i class="fa fa-plus"></i> &nbsp; Add to Order
+  </button>
+</div>

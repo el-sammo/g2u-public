@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head ng-controller="SeoController">
+		<title ng-bind="seo.title()">Grub2You - Restaurant Delivery</title>
+		<meta name="description" content="{{ seo.description() }}">
+		<meta name="keywords" content="{{ seo.keywords() }}">
+		<meta name="google-site-verification" content="kH3EtrAIRJF9-8H79GhBCEkn7IWNMYR291GAoH6iZ54" />
+
+		<!-- Viewport mobile tag for sensible mobile support -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<base href="/app/"></base>
+
+		<!-- Icons -->
+		<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/images/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/images/mstile-144x144.png">
+		<meta name="msapplication-config" content="/images/browserconfig.xml">
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.css">
+
+		<!-- Fonts -->
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:400,900italic,900,700italic,700,400italic,300italic,300">
+
+		<!--STYLES-->
+<link rel="stylesheet" href="/min/production.min.css">
+<!--STYLES END-->
+
+		<!-- Scripts -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-route.min.js"></script>
+		<script src="//code.jquery.com/jquery-latest.min.js"></script>
+	</head>
+
+	<body>
+		<%- body %>
+
+		<!--TEMPLATES-->
+
+<!--TEMPLATES END-->
+
+		<!--
+		<script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+		<script src="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+		-->
+
+		<!--SCRIPTS-->
+<script src="/min/production.min.js"></script>
+<!--SCRIPTS END-->
+
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<div
+	ng-controller="RestaurantsController"
+	id="restaurantsMenusPanel" manage-height ng-cloak
+>
+	<div class="row" ng-repeat="restaurant in restaurants">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="restaurantLink"
+						ng-click="showRestaurant(restaurant.id)"
+					>
+						{{restaurant.name}}
+					</span>
+				</div>
+			</div>
+			<div ng-show="restaurant.id === restaurantId">
+				<div class="col-md-12">
+					<div class="row" ng-repeat="menu in restaurant.menus">
+						<div>
+							<a class="menuLink" style="text-decoration: none;"
+								ng-init="menuSlug = menu.slug" href="/app/restaurants/{{menuSlug}}"
+							>
+								{{menu.name}}
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="smallRestsMenusPanel">
+		&nbsp;
+	</div>
+</div>

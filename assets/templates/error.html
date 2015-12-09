@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <button
+    type="button" class="close" data-dismiss="modal" aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 class="modal-title" id="nav-away-modal-title">
+    {{options.title}}
+  </h4>
+</div>
+<div class="modal-body" id="sd-error-modal">
+  <div class="row">
+    <div class="col-md-2">
+      <i class="fa fa-4x fa-warning"></i>
+    </div>
+    <div class="col-md-10">
+      <span>{{options.message}}</span>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button" class="btn btn-primary"
+    ng-click="$dismiss('cancel')"
+  >
+    Ok
+  </button>
+</div>
+

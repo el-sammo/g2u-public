@@ -1,0 +1,55 @@
+<div class="modal-header" ng-show="currentlyAvailable">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Add <strong>{{item.name}}</strong> to Your Order
+  </h3>
+</div>
+<div class="modal-header" ng-show="!currentlyAvailable">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Not Available
+  </h3>
+</div>
+<div id="completedOrderError" ng-show="orderCompleted">
+	<span class="errorBig">You have already completed this order.</span>
+</div>
+<div class="modal-body" ng-show="currentlyAvailable">
+	<form name="addItemForm">
+		<h4 class="breakbeat">Select Your Option</h4>
+		<div class="radio" ng-repeat="option in item.options">
+			<label>
+				<input type="radio" name="optionName" ng-value="option.id" ng-model="$parent.selOption">
+				{{option.name}} - {{option.price}}
+			</label>
+		</div>
+		<br/>
+		<label for="quantity">Quantity:</label>
+		<input type="number" name="quantity" class="form-control" min="1" required ng-model="quantity">
+		<span class="error" ng-show="addItemForm.quantity.$error.required">Quantity is required!</span>
+		<span class="error" ng-show="addItemForm.quantity.$error.number">Not a valid quantity!</span>
+		<br/>
+		<br/>
+		<label for="specInst">Special Instructions:</label>
+		<textarea class="form-control" rows="5" ng-model="specInst"></textarea>
+	</form>
+</div>
+<div class="modal-body" ng-show="!currentlyAvailable">
+	<div class="row">
+		<div class="col-md-12">
+			<span class="error" ng-show="currentlyAvailableReason === 'holiday'">Grub2You is not currently offering delivery services as we experience a labor shortage. If you or someone you know is interested in driving for Grub2You, please click on the 'Careers' link below.</span>
+			<span class="error" ng-show="currentlyAvailableReason === 'menu'">The menu you are ordering from isn't available at this time of day.</span>
+			<span class="error" ng-show="currentlyAvailableReason === 'restaurant'">The restaurant you are ordering from isn't open.</span>
+		</div>
+	</div>
+</div>
+<div class="modal-footer" ng-show="currentlyAvailable">
+  <button type="button" class="btn btn-primary pull-left" ng-click="$close('discard')">
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+  <button type="button" class="btn btn-success pull-right" ng-click="addItemOption()" ng-disabled="!selOption">
+    <i class="fa fa-plus"></i> &nbsp; Add to Order
+  </button>
+</div>
+<div class="modal-footer" ng-show="!currentlyAvailable">
+  <button type="button" class="btn btn-primary pull-left" ng-click="$close('discard')">
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+</div>

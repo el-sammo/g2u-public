@@ -1,0 +1,178 @@
+<div class="modal-header" ng-show="! step">
+	<button type="button" class="close pull-right" ng-click="$close('discard')">x</button>
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Did You Know...
+	</h3>
+	<p class="text-muted">
+		{{dyk}}
+	</p>
+</div>
+<div class="modal-header" ng-show="step === 1">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		We're almost done!
+  </h3>
+</div>
+<div class="modal-body">
+	<form name="createAccountForm">
+		<div ng-show="! step">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row no-margin hidden-xs">
+						<h4>Select Your Area</h4>
+						<div class="radio" ng-repeat="area in areas"> <!-- TODO change this to a select soon -->
+							<label>
+								<input type="radio" name="areaName" ng-value="area.id" ng-model="$parent.selArea">
+								{{area.name}}
+							</label>
+						</div>
+					</div>
+					<br class="hidden-xs"/>
+					<div class="row" ng-show="step < 1 && submitted > 0 && ! isFormComplete(0)"
+						class="formError"
+					>
+						<span class="error" style="left: 20px; position: relative;">
+							All fields with an asterisk (*) are required.
+							Please complete all required fields.
+						</span>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-12">
+									<label for="email">Email*</label>
+									<input type="text" name="email" class="form-control" required ng-model="email"
+										ng-class="required(email, 0)"
+									>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label for="username">Username*</label>
+									<input type="text" name="username" class="form-control" required
+										ng-blur="usernameSearch()" ng-model="username" ng-class="required(username, 0)"
+									>
+									<span class="error" ng-show="!validUsername">
+										The username specified is already taken.
+									</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<label for="password">Password*</label>
+									<input type="password" name="password" class="form-control"
+										required ng-model="password" ng-class="required(password, 0)"
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 hidden-xs">
+					<p class="text-muted">
+							Hungry for Italian, steaks or chops?
+					</p>
+					<p class="text-muted">
+						How about some seafood or Chinese?
+					</p>
+					<p class="text-muted">
+						Maybe you just want tacos or a burger and fries. Whatever you're craving, have us...<h3>Bring the Grub2You!</h3>
+					</p>
+					<br/>
+				</div>
+				<div class="col-md-6">
+					<span ng-click="haveAccount()" style="font-size: 14px; font-weight: 500; color: blue; cursor: pointer;">Click here to sign in if you already have an account.</span>
+				</div>
+			</div>
+		</div>
+		<div ng-show="step === 1">
+			<div class="row" ng-show="submitted > 1 && ! isFormComplete(1)" class="formError">
+				<span class="error" style="left: 20px; position: relative;">
+					All fields with an asterisk (*) are required.
+					Please complete all required fields.
+				</span>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-12">
+							<label for="fName">First Name*</label>
+							<input type="text" name="fName" class="form-control" required ng-model="fName"
+								ng-class="required(fName, 1)"
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="lName">Last Name*</label>
+							<input type="text" name="lName" class="form-control" required ng-model="lName"
+								ng-class="required(lName, 1)"
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="phone">Phone*</label>
+							<input type="text" name="phone" class="form-control" required ng-model="phone"
+								ng-class="required(phone, 1)"
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-md-12">
+							<label for="address">Address*</label>
+							<input type="text" name="address" class="form-control" required
+								ng-model="address" ng-class="requiredAddress(address, 1)"
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="apt">Apt / Ste:</label>
+							<input type="text" name="apt" class="form-control" ng-model="apt">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="city">City*</label>
+							<input type="text" name="city" class="form-control" required ng-model="city"
+								ng-class="required(city, 1)"
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<label for="zip">Zip*</label>
+							<input type="text" name="zip" class="form-control" required
+								ng-model="zip" ng-class="required(zip, 1)"
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<button ng-show="! step" type="button" class="btn btn-primary pull-left" 
+		ng-click="$close('discard')"
+	>
+    <i class="fa fa-reply"></i> &nbsp; Close
+  </button>
+	<button ng-show="step === 1" type="button" class="btn btn-primary pull-left" 
+		ng-click="step = (step || 1) - 1"
+	>
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+	<button ng-show="! step || step < 1" type="button" class="btn btn-success pull-right" 
+		ng-click="startAccount()" ng-disabled="!selArea"
+	>
+		Next &nbsp; <i class="fa fa-chevron-right"></i>
+	</button>
+	<button ng-show="step && step > 0" type="button" class="btn btn-success pull-right" 
+		ng-click="createAccount()"
+	>
+    <i class="fa fa-plus"></i> &nbsp; Create Account
+	</button>
+</div>

@@ -1,0 +1,949 @@
+
+/** Global **/
+
+html {
+	overflow: -moz-scrollbars-vertical; 
+	overflow-y: scroll;
+	height: 100%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	height: 100%;
+}
+
+.no-margin {
+	margin-left: 0px!important;
+}
+.no-right-padding {
+	padding-right: 0px!important;
+}
+
+.breakbeat5 {
+	margin-bottom: 5px;
+}
+.breakbeat8 {
+	margin-bottom: 5px;
+}
+.breakbeat12 {
+	margin-bottom: 12px;
+}
+.breakbeat20 {
+	margin-bottom: 20px;
+}
+
+.vspace70 {
+	width: 99%;
+	height: 70px;
+}
+
+input.error {
+	border: 1px solid red;
+}
+
+.form-section {
+	padding-top: 12px;
+	border-top: 1px solid #eee;
+}
+
+/** Bootstrap overrides **/
+
+.page-header {
+	margin-top: 0px;
+	padding-top: 0px;
+}
+.page-header h1, .page-header h2, .page-header h3 {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.navbar button {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 8px;
+}
+
+.modal {
+	background-color: rgba(0, 0, 0, .3);
+}
+
+.btn.btn-danger {
+	background-color: #f00;
+	font-weight: 900;
+}
+.btn.btn-danger:hover {
+	background-color: #c00;
+}
+
+.btn.btn-big {
+	font-size: 16pt;
+}
+
+/** Google Maps **/
+.angular-google-map-container { height: 400px; }
+
+/** Custom CSS **/
+
+.noAccount {
+	font-size: 14px;
+	font-weight: 500;
+	color: blue;
+	cursor: pointer;
+}
+
+.logInSignUpLink {
+	top: -5px;
+	left: -28px;
+	font-size: 14pt;
+	font-weight: 700;
+	color: #FFF;
+	position: relative;
+}
+
+.logInSignUpPipe {
+	top: -6px;
+	left: -28px;
+	font-size: 14pt;
+	font-weight: 700;
+	color: #FFF;
+	cursor: default;
+	position: relative;
+}
+
+#hpFooter {
+	margin-top: -135px;
+	padding: 40px 0 20px;
+	vertical-align: top;
+}
+
+
+/*
+footer {
+	margin-top: -135px;
+	padding: 40px 0 20px;
+	vertical-align: top;
+}
+
+.footer-container {
+	width: 100%;
+	background-color: #FF9800;
+	height: 100%;
+}
+
+.footer-nav {
+	left: 25%;
+	width: 50%;
+	position: relative;
+}
+*/
+
+.navbar.navbar-fixed-bottom {
+	background-color: #FF9800;
+	min-height: 30px!important;
+}
+
+.navbar.navbar-fixed-bottom .container {
+	text-align: center;
+}
+
+.navbar.navbar-fixed-bottom .footerLink {
+	margin-right: 20px;
+	color: #FFF;
+	font-size: 12pt;
+	text-align: left;
+	line-height: 20pt;
+	font-weight: 600;
+	font-style: normal;
+	text-decoration: none!important;
+}
+
+td {
+	vertical-align: middle!important;
+}
+
+.divspan {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+.fa-btn-text {
+	position: relative;
+	top: -4px;
+	margin-left: 4px;
+}
+
+.collageMain {
+	/* top: 164px; */
+	width: 640px;
+	background-color: white;
+	position: relative;
+}
+
+#newsFeeder {
+	/* top: 164px; */
+	position: relative;
+}
+
+#areaNewsHeader {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+.areaNewsHead {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.storyFeed {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#storySection {
+	left: 20px;
+	position: relative;
+}
+
+.storyHeadline {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.storyBody {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+#featuredHeadContainer {
+	top: -46px;
+	left: 120px;
+	text-align: center;
+	position: relative;
+}
+
+#featuredHeadIcon {
+	position: relative;
+	z-index: 99;
+}
+
+#serviceStarts {
+	top: 0px;
+	left: 75%
+	position: relative;
+}
+
+.applyLink {
+	color: red;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.basicLink {
+	color: blue;
+	font-weight: 500;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.restInfo {
+	top: -260px;
+	left: 200px;
+	width: 240px;
+	height: 120px;
+	border: 2px solid white;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-color: white;
+	font-weight: 700;
+	text-align: center;
+	position: relative;
+	z-index: 100;
+}
+
+.collageMain .row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.collageMain .col-md-12 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.collageMain .col-md-6 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.fms-time {
+	margin-left: 20px;
+}
+
+.restMenuHead {
+	font-size: 16px;
+}
+
+.restaurantLink {
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.smallRestsMenusPanel {
+	height: 96px;
+}
+
+.menuLink {
+	font-size: 12px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.hideMenuList {
+	display: none;
+}
+
+.hideItemList {
+	display: none;
+}
+
+#itemRow {
+	padding: 8px;
+}
+
+.itemName {
+	font-size: 18px;
+	font-weight: 450;
+}
+
+.itemDesc {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.add2Order {
+	color: red;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.removeFromOrder {
+	top: 0px;
+	left: -4px;
+	color: red;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+	text-align: right;
+	position: relative;
+}
+
+.removeFromOrderSmall {
+	color: red;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+#aboutMain {
+	/* top: 164px; */
+	background-color: #fff;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#aboutStoryHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#aboutOtherHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#aboutDriversHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#aboutStoryBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#aboutOtherBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#aboutDriversBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#accountMain {
+	/* top: 164px; */
+	background-color: #fff;
+	position: relative;
+}
+
+#accountHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#accountBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 24px;
+}
+
+.daysRowHead {
+	border-bottom: 2px solid black;
+}
+
+.hoursDayHead {
+	font-size: 16px;
+	font-weight: 700;
+	color: black;
+}
+
+.hoursNo {
+	background-color: grey;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+.hoursNoLabel {
+	color: white;
+}
+
+.hoursYes {
+	background-color: #FF9800;
+	width: 100%;
+	border-bottom: 1px solid black;
+}
+
+.hoursYesLabel {
+	/* color: #254684; */
+	color: white;
+}
+
+.marker-labels {
+	font-size: 12px;
+	font-weight: 500;
+	color: black;
+	background-color:rgba(255,255,255,0.75);
+	padding: 2px;
+	border: 1px solid black;
+}
+
+.orderHistoryLink {
+}
+
+.logOutLink {
+	cursor: pointer;
+}
+
+#privacyMain {
+	/* top: 164px; */
+	background-color: #fff;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#termsMain {
+	/* top: 164px; */
+	background-color: #fff;
+	position: relative;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.managementLink {
+	color: #007581;
+	cursor: pointer;
+}
+
+#historyHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#historyBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 24px;
+}
+
+#managementHead {
+	text-align: center;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#managementBody {
+	padding-top: 4px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 24px;
+}
+
+.menuHeader {
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.menuInfo {
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+}
+
+#restListHead {
+	/* top: 164px; */
+	text-align: center;
+	background-color: white;
+	border-bottom: 1px solid #C0C2FF;
+	margin-bottom: 12px;
+	position: relative;
+}
+
+#menuListHead {
+	/* top: 164px; */
+	text-align: center;
+	background-color: white;
+	border-bottom: 1px solid #C0C2FF;
+	margin-bottom: 12px;
+	position: relative;
+}
+
+#orderHead {
+	/* top: 164px; */
+	text-align: center;
+	background-color: white;
+	border-bottom: 1px solid #C0C2FF;
+	margin-bottom: 12px;
+	position: relative;
+}
+
+#restaurantsMenusPanel {
+	background-color: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+#menuItemsPanel {
+	border-left: 1px dotted #C0C2FF;
+	border-right: 1px dotted #C0C2FF;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.menuHeader {
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.menuInfo {
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+}
+
+#orderPanel {
+	background-color: #fff;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/* margin-top: 172px; */
+}
+
+.orderHead {
+	font-size: 16px;
+	font-weight: 600;
+}
+
+#thingRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#thingPrice {
+	top: 0px;
+	left: 4px;
+	text-align: right;
+	position: relative;
+}
+
+#subtotalRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#taxRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#deliveryFeeRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#gratuityRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#discountRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: 1px solid #C0C2FF;
+}
+
+#totalRow {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-top: 1px solid #263248;
+}
+
+#subtotal {
+	padding-top: 4px;
+	text-align: right;
+}
+
+#tax {
+	text-align: right;
+}
+
+#deliveryFee {
+	text-align: right;
+}
+
+#gratuity {
+	text-align: right;
+}
+
+#discount {
+	text-align: right;
+}
+
+#total {
+	text-align: right;
+}
+
+#checkoutLink {
+	padding-top: 8px;
+	text-align: center;
+}
+
+.checkoutLink {
+	font-size: 18px;
+	font-weight: 900;
+	color: red;
+	cursor: pointer;
+}
+
+.totalLabel {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.currentTotal {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.formError {
+	font-size: 14px;
+	font-weight: 500;
+	color: red;
+}
+
+.helpInfo {
+	font-size: 14px;
+	font-weight: 500;
+	color: blue;
+	cursor: pointer;
+}
+
+.awesome {
+	font-size: 16px;
+	font-weight: 700;
+	color: blue;
+}
+
+.error {
+	font-size: 14px;
+	font-weight: 500;
+	color: red;
+}
+
+.errorBig {
+	font-size: 18px;
+	font-weight: 700;
+	color: red;
+}
+
+#completedOrderError {
+	top: 0px;
+	left: 20px;
+	position: relative;
+}
+
+#orderDetailsContainer {
+	/* top: 172px; */
+	left: 0px;
+	position: relative;
+}
+
+.orderBevsLink {
+	font-size: 14px;
+	font-weight: 700;
+	color: red;
+	cursor: pointer;
+}
+
+/** Carousel **/
+#slides_control > div {
+	top: 20px;
+	width: 640px;
+	background-color: #FFF;
+	border: 2px solid #263248;
+	position: relative;
+}
+
+#slides_control {
+	position:absolute;
+	width: 400px;
+	left:50%;
+	top:20px;
+	margin-left:-200px;
+}
+
+/** Angular Bootstrap **/
+
+.nav a, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/** Pods **/
+
+.pod-row {
+}
+
+.pod-row .pod {
+	padding: 15px;
+	border-radius: 15px;
+	border: 1px solid #ccc;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+.pod.col-md-3 {
+	width: calc((100% * 3 / 12) - 15px);
+}
+.pod.col-md-4 {
+	width: calc((100% * 4 / 12) - 15px);
+}
+.pod.col-md-8 {
+	width: calc((100% * 8 / 12) - 15px);
+}
+
+.pod-row .pod .pod-body {
+	width: calc(100% * 11 / 12);
+	float: left;
+}
+.pod-row .pod .pod-body .row {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 10px;
+}
+
+.pod-row .pod .pod-body .col-md-1, .pod-row .pod .pod-body .col-md-2,
+.pod-row .pod .pod-body .col-md-3, .pod-row .pod .pod-body .col-md-4,
+.pod-row .pod .pod-body .col-md-5, .pod-row .pod .pod-body .col-md-6,
+.pod-row .pod .pod-body .col-md-7, .pod-row .pod .pod-body .col-md-8,
+.pod-row .pod .pod-body .col-md-9, .pod-row .pod .pod-body .col-md-10,
+.pod-row .pod .pod-body .col-md-11, .pod-row .pod .pod-body .col-md-12 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.pod-row .pod .pod-body .col-md-offset-1, .pod-row .pod .pod-body .col-md-offset-2,
+.pod-row .pod .pod-body .col-md-offset-3, .pod-row .pod .pod-body .col-md-offset-4,
+.pod-row .pod .pod-body .col-md-offset-5, .pod-row .pod .pod-body .col-md-offset-6,
+.pod-row .pod .pod-body .col-md-offset-7, .pod-row .pod .pod-body .col-md-offset-8,
+.pod-row .pod .pod-body .col-md-offset-9, .pod-row .pod .pod-body .col-md-offset-10,
+.pod-row .pod .pod-body .col-md-offset-11, .pod-row .pod .pod-body .col-md-offset-12 {
+	margin-left: 15px;
+}
+
+.pod-row .pod .pod-controls {
+	padding-left: 15px;
+	width: calc(100% * 1 / 12);
+	float: left;
+}
+.pod-row .pod .pod-controls button {
+	margin-bottom: 10px;
+}
+
+/** Layout **/
+
+.navbar.visible-md-inline .fms-brand {
+	padding-left: 5px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width: 120px;
+}
+
+.navbar.visible-md-inline .fms-brand a {
+	padding: 0;
+}
+
+.navbar.visible-lg-inline .fms-brand a {
+	height: 174px;
+	position: relative;
+	top: -63px;
+}
+
+.navbar.visible-md-inline .fms-brand img {
+	width: 120px;
+}
+
+.navbar.visible-md-inline .hours-of-operation {
+	color: red!important;
+	cursor: default;
+}
+
+.navbar.visible-md-inline .menu-item {
+	height: 22px;
+	float: left;
+	display: inline;
+}
+
+.navbar.visible-md-inline h1 {
+	margin-top: 6px;
+	margin-bottom: 0px;
+	font-size: 11pt!important;
+}
+
+#fms-headbar.visible-lg-inline {
+	background-color: #FF9800;
+	height: 120px;
+	border: 0;
+}
+
+#fms-headbar.visible-md-inline {
+	background-color: #FF9800;
+	height: 60px;
+	border: 0;
+}
+
+#fms-headbar, #fms-headbar a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#fms-headbar h1 {
+	font-size: 14pt;
+	position: relative;
+	left: -10px;
+	top: -5px;
+	font-weight: bold;
+	margin-left: 10px;
+	margin-right: 30px;
+	color: #fff;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+
+#fms-headbar .nav li a {
+	padding-right: 0;
+}
+#fms-headbar .nav li>a.active {
+	background-color: #007581;
+}
+
+.fms-headbar-add {
+	padding-right: 15px!important;
+	padding-left: 10px!important;
+}
+
+.navbar-fixed-fix {
+	height: 60px;
+}
+
+#fms-messenger .alert {
+	/* width: calc(100% - 70em); */
+	border-color: #fff;
+	width: 40em;
+	height: 40px;
+	position: fixed;
+	text-align: center;
+	top: 4px;
+	/* left: calc(50% - (100% - 70em) / 2); */
+	left: calc(50% - (40em / 2));
+	z-index: 1030;
+	padding-top: 10px;
+	background: #fff;
+	color: #000;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipses;
+}
+
+#fms-main-container {
+	margin-left: 0px;
+	width: 100%;
+	background-color: white;
+	/* height: 100%; */
+}
+
+#fms-modules-grid {
+	position: relative;
+	left: -20px;
+}
+
+#fms-nav-away-modal li {
+	margin-top: 14px;
+	line-height: 20pt;
+}
+
+.label.label-custom {
+	background-color: #fff;
+	border: 1px solid #999;
+	color: #000;
+}
+
+.label.text-muted {
+	color: #888;
+}
+
+table .fms-action {
+	float: left;
+}
+

@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="nav-away-modal-title">
+		Have Something to Share with Us? We Love your Feedback - Share it with Us!
+  </h3>
+</div>
+<div class="modal-body">
+	<form name="feedbackForm">
+		<label for="name">Name</label>
+		<input type="text" name="name" class="form-control" ng-model="name">
+		<label for="email">Email</label>
+		<input type="text" name="email" class="form-control" ng-model="email">
+		<label for="feedback">Feedback:</label>
+		<textarea class="form-control" rows="5" ng-model="feedback"></textarea>
+	</form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary pull-left" ng-click="$close('discard')">
+    <i class="fa fa-reply"></i> &nbsp; Go Back
+  </button>
+  <button type="button" class="btn btn-success pull-right" ng-click="sendFeedback()" ng-disabled="!feedback">
+    <i class="fa fa-plus"></i> &nbsp; Send Feedback
+  </button>
+</div>

@@ -1,0 +1,66 @@
+<div class="col-md-12">
+	<div class="row" id="accountMain" ng-init="customerId = customer.id">
+		<div class="col-md-3">
+			<div class="row" id="accountHead">
+				<h3>Account Information</h3>
+			</div>
+			<div class="row" id="accountBody">
+				{{customer.fName}} {{customer.lName}}<br/>
+				{{customer.addresses.primary.streetNumber}} {{customer.addresses.primary.streetName}} <span ng-show="customer.addresses.primary.apt">{{customer.addresses.primary.apt}}</span><br/>
+				{{customer.addresses.primary.city}}, {{customer.addresses.primary.state}} {{customer.addresses.primary.zip}}<br/>
+				{{customer.phone}}<br/>
+				{{customer.email}}<br/>
+				{{taxExempt}}<br/><br/>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-md-12">
+					<h4>Payment Methods</h4>
+				</div>
+			</div>
+			<div class="row" ng-show="customer.paymentMethods.length > 0">
+				<div class="col-md-12">
+					<div class="row" ng-repeat="method in customer.paymentMethods">
+						<div class="col-md-11 col-md-offset-1">
+							<span>Card ending in {{method.lastFour}} (expires {{method.expires.substr(5,6)}}-{{method.expires.substr(0, 4)}})</span><!--  - <span class="managementLink" ng-click="removePM(method.id)">Remove</span><br/> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-md-11 col-md-offset-1">
+					<span class="managementLink" ng-click="addPM()">Add a Payment Method</span><br/>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-md-offset-1">
+			<div class="row" id="historyHead">
+				<h3>Order History</h3>
+			</div>
+			<div id="historyBody">
+				<div class="row" ng-repeat="order in orders">
+					<div class="col-md-4">
+						<span class="orderHistoryLink"><a href="/app/order/{{order.id}}">{{order.orderDate}}</a></span>
+					</div>
+					<div class="col-md-4 col-md-offset-4" style="text-align: right;">
+						<span class="orderHistoryLink"><a href="/app/order/{{order.id}}">{{order.total}}</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-md-offset-1">
+			<div class="row" id="managementHead">
+				<h3>Account Management</h3>
+			</div>
+			<div class="row" id="managementBody">
+				<span class="managementLink" ng-click="changeAddress(customer.id)">Change Delivery Address</span><br/>
+				<span class="managementLink" ng-click="logOut()">Log Out</span><br/>
+			</div>
+			<!--
+			// TODO
+				<span class="managementLink" ng-init="customerId = customer.id" ng-click="changePwd(customerId)">Change Password</span><br/>
+			-->
+		</div>
+	</div>
+</div>

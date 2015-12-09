@@ -1,0 +1,156 @@
+<ul id="fms-modules-grid" ng-cloak>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-1">
+					<div class="row">
+						<div class="collageMain">
+							<div id="featuredHeadContainer">
+								<div id="featuredHeadIcon">
+ 									<img src="/images/featured_icon_final.png">
+								</div>
+							</div>
+							<div id="slides_control">
+								<carousel interval="myInterval">
+									<slide ng-repeat="restaurant in restaurants" active="restaurant.active">
+										<div class="col-md-12" ng-show="restaurant.rotatorPanel < 2">
+											<div class="row">
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug1}}" style="text-decoration: none;"><img src="{{restaurant.itemImage1}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug2}}" style="text-decoration: none;"><img src="{{restaurant.itemImage2}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug3}}" style="text-decoration: none;"><img src="{{restaurant.itemImage3}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.slug}}" style="text-decoration: none;"><img src="{{restaurant.image}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug5}}" style="text-decoration: none;"><img src="{{restaurant.itemImage5}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug6}}" style="text-decoration: none;"><img src="{{restaurant.itemImage6}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug7}}" style="text-decoration: none;"><img src="{{restaurant.itemImage7}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug8}}" style="text-decoration: none;"><img src="{{restaurant.itemImage8}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug9}}" style="text-decoration: none;"><img src="{{restaurant.itemImage9}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug10}}" style="text-decoration: none;"><img src="{{restaurant.itemImage10}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12" ng-show="restaurant.rotatorPanel > 1 && restaurant.rotatorPanel < 3">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug6}}" style="text-decoration: none;"><img src="{{restaurant.itemImage6}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug7}}" style="text-decoration: none;"><img src="{{restaurant.itemImage7}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug8}}" style="text-decoration: none;"><img src="{{restaurant.itemImage8}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.slug}}" style="text-decoration: none;"><img src="{{restaurant.image}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug10}}" style="text-decoration: none;"><img src="{{restaurant.itemImage10}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug1}}" style="text-decoration: none;"><img src="{{restaurant.itemImage1}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+												<div class="col-md-6">
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug2}}" style="text-decoration: none;"><img src="{{restaurant.itemImage2}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug3}}" style="text-decoration: none;"><img src="{{restaurant.itemImage3}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug4}}" style="text-decoration: none;"><img src="{{restaurant.itemImage4}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+														<div class="col-md-6">
+															<a href="/app/restaurants/{{restaurant.menuSlug5}}" style="text-decoration: none;"><img src="{{restaurant.itemImage5}}" class="img-responsive" style="border: 1px solid white;"></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12" ng-show="restaurant.rotatorPanel > 2">
+											<div class="row">
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug1}}" style="text-decoration: none;"><img src="{{restaurant.itemImage1}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.slug}}" style="text-decoration: none;"><img src="{{restaurant.image}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug3}}" style="text-decoration: none;"><img src="{{restaurant.itemImage3}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+												<div class="col-md-6">
+													<a href="/app/restaurants/{{restaurant.menuSlug4}}" style="text-decoration: none;"><img src="{{restaurant.itemImage4}}" class="img-responsive" style="border: 1px solid white;"></a>
+												</div>
+											</div>
+										</div>
+									</slide>
+								</carousel>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-md-offset-1" ng-show="stories" id="newsFeeder">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="areaNewsHeader">
+								<span class="areaNewsHead">{{areaName}} Grub2You News</span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 storyFeed">
+							<div class="row" ng-repeat="story in stories" id="storySection">
+								<span class="storyHeadline">{{story.headline}}<br/></span>
+								<span class="storyBody">{{story.body}}<br/><br/></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+  </div>
+</ul>

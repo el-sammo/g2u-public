@@ -1,0 +1,79 @@
+<div id="orderDetailsContainer" style="padding-bottom: 80px">
+	<div class="col-md-12 page-header" ng-cloak>
+		<div class="row">
+			<div class="col-md-2">
+				<span class="orderDetailsDestinationInfo" style="font-size: 16px; font-weight: bold;">{{fName}} {{lName}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{phone}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{address}}</span>
+			</div>
+			<div class="col-md-2">
+				<span class="orderDetailsDestinationInfo">Order Date: {{orderDate}}<br/></span>
+				<span class="orderDetailsDestinationInfo" ng-show="paymentMethod != 'cash'">Credit Card: {{total}}</span>
+				<span class="orderDetailsDestinationInfo" ng-show="paymentMethod == 'cash'">Cash: {{total}}</span>
+				<br/>
+				<span ng-show="orderStatus > 4 && orderStatus < 6">Payment Accepted at {{paymentAcceptedAtFormatted}}</span>
+				<span ng-show="orderStatus > 5 && orderStatus < 7">Order Placed at {{placedAtFormatted}}</span>
+				<span ng-show="orderStatus > 6 && orderStatus < 8">Order Collected at {{collectedAtFormatted}}</span>
+				<span ng-show="orderStatus > 8">Order Delivered at {{deliveredAtFormatted}}</span>
+			</div>
+			<div class="col-md-1">
+				<span class="orderDetailsDestinationInfo">Subtotal<br/></span>
+				<span class="orderDetailsDestinationInfo">Tax<br/></span>
+				<span class="orderDetailsDestinationInfo">Delivery Fee<br/></span>
+				<span class="orderDetailsDestinationInfo" ng-show="gratuity > 0">Gratuity<br/></span>
+				<span class="orderDetailsDestinationInfo" ng-show="discount > 0">Discount<br/></span>
+				<span class="orderDetailsDestinationInfo">Total</span>
+			</div>
+			<div class="col-md-1" style="text-align: right;">
+				<span class="orderDetailsDestinationInfo">{{subtotal}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{tax}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{deliveryFee}}<br/></span>
+				<span class="orderDetailsDestinationInfo" ng-show="gratuity > 0">{{gratuity}}<br/></span>
+				<span class="orderDetailsDestinationInfo" ng-show="discount > 0" style="color: red;">-{{discount}}<br/></span>
+				<span class="orderDetailsDestinationInfo">{{total}}</span>
+			</div>
+			<div class="col-md-2">
+				<span class="orderDetailsDestinationInfo" style="font-size: 16px; font-weight: bold;">Order Status<br/></span>
+				<span class="orderDetailsDestinationInfo">{{orderStatusFormatted}}</span>
+			</div>
+			<div class="col-md-4">
+				&nbsp;
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="row" ng-repeat="restaurant in orderRestaurants">
+					<div class="col-md-12">
+						<div class="row">
+							<span class="orderDetailsRestaurantInfo"><h4>{{restaurant.name}}</h4></span>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="row" ng-repeat="item in restaurant.items">
+							<div class="col-md-11 col-md-offset-1">
+								<span class="orderDetailsItemInfo"><b>{{item.quantity}}</b> {{item.name}} - {{item.option}}<br/></span>
+								<span class="orderDetailsItemInfo">{{item.specInst}}<br/></span>
+							</div>
+						</div>
+					</div>
+					<br/>
+				</div>
+				<div class="row" ng-repeat="bev in bevThings">
+					<div class="col-md-11 col-md-offset-1">
+						<span class="orderDetailsItemInfo"><b>{{bev.quantity}}</b> {{bev.option}} {{bev.name}}<br/></span>
+					</div>
+					<br/>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="row">
+					<div class="col-md-12">
+						<iframe width="600" height="450" frameborder="0" style="border:0" src="{{src}}"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
